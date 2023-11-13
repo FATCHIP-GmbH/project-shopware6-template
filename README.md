@@ -19,10 +19,6 @@ siehe: https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for
 - htdocs/public/media => $environment/shared/shopware/public/media
 - htdocs/files/media => $environment/shared/shopware/files/media
 
-### folgende Symlinks sind innerhalb des git repos:
-- vendor/moorl/foundation => htdocs/custom/Plugins/MoorlFoundation
-- shopware => htdocs
-
 ## Hosting
 Bei iWelt. Stage im Unterordner von Live per Symlink.
 
