@@ -1,5 +1,4 @@
-![PHP Lint](https://github.com/FATCHIP-GmbH/project-template/workflows/PHP%20Lint/badge.svg)
-# FATCHIP project-template
+# FATCHIP project-shopware6-template
 Template for creating a new Github project repository in FATCHIP style
 
 
@@ -8,11 +7,25 @@ Here we store all files that differ for each environment in a subfolder like `pr
 DeployHQ will automatically deploy the right folderes to the right environment if configured properly.
 ### _FCDEPLOY
 Here all scripts regarding the [DeployHQ](https://fatchip-gmbh.deployhq.com/) Deployment process are located.
-### _FCPROJECT
-SQL files, docs, external configs...
-### _RUNDECK
-Folder for Rundecks GIT synch feature
 ### htdocs
 This is where your project files go.
-### .deployignore
-These files will NOT be deployed by DeployHQ. [Syntax explanation](https://www.deployhq.com/support/excluded-files)
+
+Unter Windows beachten, um Git checkout zu machen:\
+In cmd als Administrator ausfürhen:\
+`git config --system core.longpaths true`\
+siehe: https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows
+
+### folgende Symlinks werden nach dem Deployment gesetzt:
+- htdocs/public/media => $environment/shared/shopware/public/media
+- htdocs/files/media => $environment/shared/shopware/files/media
+
+### folgende Symlinks sind innerhalb des git repos:
+- vendor/moorl/foundation => htdocs/custom/Plugins/MoorlFoundation
+- shopware => htdocs
+
+## Hosting
+Bei iWelt. Stage im Unterordner von Live per Symlink.
+
+## Updates
+Nach Shopware/Plugin Updates die Datenabnkmigration ausführen durch:
+php8.2 bin/console database:migrate --all

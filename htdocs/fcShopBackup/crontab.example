@@ -1,0 +1,4 @@
+00 11 * * *  php /var/www/web2/htdocs/prod/current/fcShopBackup/batch/fcbackup_database.php >> /var/www/web2/htdocs/prod/current/var/log/backups.log 2>&1
+10 11 * * *  php /var/www/web2/htdocs/prod/current/fcShopBackup/batch/fcbackup_database_restic.php >> /var/www/web2/htdocs/prod/current/var/log/backups.log 2>&1
+15 11 * * *  php /var/www/web2/htdocs/prod/current/fcShopBackup/batch/fcbackup_files_restic.php >> /var/www/web2/htdocs/prod/current/var/log/backups.log 2>&1
+20 11 * * *  php /var/www/web2/htdocs/prod/current/fcShopBackup/batch/fcbackup_cleanup_restic.php >> /var/www/web2/htdocs/prod/current/var/log/backups.log 2>&1

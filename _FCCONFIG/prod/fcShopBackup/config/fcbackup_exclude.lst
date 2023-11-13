@@ -1,0 +1,5 @@
+# exclude dirs
+files/backup/*
+var/cache/*
+var/log/*
+public/stage/*
