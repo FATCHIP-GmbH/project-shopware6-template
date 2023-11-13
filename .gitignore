@@ -1,5 +1,3 @@
 .idea
-/htdocs/cache/*
-!/htdocs/cache/.gitkeep
-/htdocs/.htaccess
-node_modules/
+/htdocs/files/
+/htdocs/var/
